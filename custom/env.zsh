@@ -15,7 +15,7 @@ alias l='ls -CF'
 # sl->ls
 alias sl='ls'
 
-set -o emacs
+bindkey -e
 
 # export default gpg key
 export GPGKEY=7527C999
