@@ -6,8 +6,14 @@ export VISUAL="vim"
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
+# alias
 alias em="zile"
 alias emc="emacsclient -t --alternate-editor="""
+
+alias la='ls -A'
+alias l='ls -CF'
+# sl->ls
+alias sl='ls'
 
 set -o emacs
 
