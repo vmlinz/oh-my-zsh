@@ -1,6 +1,5 @@
 # Android sdk tools & platform tools
-ANDROID_SDK_ROOT=$HOME/Projects/android/sdk
-
+ANDROID_SDK_ROOT=$HOME/Projects/android/sdk/android-sdk-linux_86
 if [[ -d $ANDROID_SDK_ROOT/tools ]]; then
     ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/tools
 else
@@ -16,7 +15,7 @@ else
 fi
 
 # Android ndk
-ANDROID_NDK_ROOT=$HOME/Projects/android/ndks
+ANDROID_NDK_ROOT=$HOME/Projects/android/ndk
 ANDROID_NDK_VERSION=android-ndk-r4
 if [[ -d $ANDROID_NDK_ROOT/$ANDROID_NDK_VERSION ]]; then
     ANDROID_NDK_DIR=$ANDROID_NDK_ROOT/$ANDROID_NDK_VERSION
