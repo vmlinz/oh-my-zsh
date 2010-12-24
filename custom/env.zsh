@@ -27,3 +27,8 @@ bindkey -e
 export GPGKEY=7527C999
 
 stty stop ^X
+
+# play with the go-lang
+export GOROOT=$HOME/Projects/go/go-lang
+export GOARCH=amd64
+export GOOS=linux
