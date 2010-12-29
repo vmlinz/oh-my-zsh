@@ -1,0 +1,7 @@
+#compdef android
+#autoload
+
+_arguments -s \
+  '(-h,--help)'{-h,--help}'[Help on a specific command.]' \
+  '(-s,--silent)'{-s,--silent}'[Silent mode: only errors are printed out.]' \
+  '(-v,--verbose)'{-v,--verbose}'[Verbose mode: errors, warnings and informational messages are printed.]'

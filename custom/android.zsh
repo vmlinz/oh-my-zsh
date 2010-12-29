@@ -16,7 +16,7 @@ fi
 
 # Android ndk
 ANDROID_NDK_ROOT=$HOME/Projects/android/ndk
-ANDROID_NDK_VERSION=android-ndk-r4
+ANDROID_NDK_VERSION=android-ndk-r5
 if [[ -d $ANDROID_NDK_ROOT/$ANDROID_NDK_VERSION ]]; then
     ANDROID_NDK_DIR=$ANDROID_NDK_ROOT/$ANDROID_NDK_VERSION
 else
