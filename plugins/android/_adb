@@ -1,0 +1,51 @@
+#compdef adb
+#autoload
+
+local -a adb_args
+local adb_commands
+
+adb_commands=(
+    "devices:list all connected devices"
+    "push:<local> <remote>-copy file/dir to device"
+    "pull:<remote> [<local>]-copy file/dir from device"
+    "sync:[<directory>]-copy host->device only if changed"
+    "shell:remote shell interactively"
+    "shell:<command>-remote shell command"
+    "emu:<command>-emulator console command"
+    "logcat:[<filter-spec>]-View device log"
+    "forward:<local> <remote>-forward socket connections"
+    "jdwp:-PIDs of processes hosting a JDWP transport"
+    "install:[-l] [-r] [-s] <file>-push this package file to the device and install it"
+    "uninstall:[-k] <package>-remove this app package from the device"
+    "help:this help message"
+    "version:version num"
+    "wait-for-device:block until device is online"
+    "start-server:that there is a server running"
+    "kill-server:kill the server if it is running"
+    "get-state:prints offline | bootloader | device"
+    "get-serialno:prints <serial-number>"
+    "status-window:continuously print device status for a specified device"
+    "remount:remounts the /system partition on the device read-write"
+    "reboot:[bootloader|recovery]-reboots the device, optionally into the bootloader or recovery program"
+    "reboot-bootloader:the device into the bootloader"
+    "root:restarts the adbd daemon with root permissions"
+    "usb:restarts the adbd daemon listening on USB"
+    "tcpip:<port>-restarts the adbd daemon listening on TCP on the specified port"
+    "ppp:<tty> [parameters]-Run PPP over USB."
+)
+
+adb_args=(
+    -d"[directs command to the only connected USB device.]"
+    -e"[directs command to the only running emulator.]"
+    -s"[<serial number> directs command to the USB device or emulator with the given serial number.]"
+    -p"[<product name or path>]"
+)
+
+_arguments \
+    $adb_args \
+    '*:: :->subcmds' && return 0
+
+if (( CURRENT == 1 )); then
+    _describe -t commands "adb subcommand" adb_commands
+    return
+fi
