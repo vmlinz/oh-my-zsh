@@ -1,32 +1,50 @@
 #compdef android
 #autoload
 
-local -a _1st_arguments
-_1st_arguments=(
-'list:Lists existing targets or virtual devices.'
-'list avd:Lists existing Android Virtual Devices.'
-'list target:Lists existing targets.'
-'create avd:Creates a new Android Virtual Device.'
-'move avd:Moves or renames an Android Virtual Device.'
-'delete avd:Deletes an Android Virtual Device.'
-'update avd:Updates an Android Virtual Device to match the folders of a new SDK.'
-'create project:Creates a new Android project.'
-'update project:Updates an Android project (must already have an AndroidManifest.xml).'
-'create test-project:Creates a new Android project for a test package.'
-'update test-project:Updates the Android project for a test package (must already have an AndroidManifest.xml).'
-'create lib-project:Creates a new Android library project.'
-'update lib-project:Updates an Android library project (must already have an AndroidManifest.xml).'
-'update adb:Updates adb to support the USB devices declared in the SDK add-ons.'
-'update sdk:Updates the SDK by suggesting new platforms to install if available.'
-)
+_android() {
+  local -a arguments
+  local state line cmds
+  arguments=(
+    '(-v --verbose)'{-v,--verbose}'[verbose]'
+    '(-h --help)'{-h,--help}'[display help screen]'
+    '1: :->cmds'
+    '*: :->args'
+  )
+    _arguments -S $arguments
 
-_arguments -s \
-  '(-h,--help)'{-h,--help}'[Help on a specific command.]' \
-  '(-s,--silent)'{-s,--silent}'[Silent mode: only errors are printed out.]' \
-  '(-v,--verbose)'{-v,--verbose}'[Verbose mode: errors, warnings and informational messages are printed.]'\
-  '*:: :->subcmds' && return 0
+    case $state in
+      cmds)
+	cmds=(
+	    'update:Resynchronize package contents'
+	    'search:Search in which package file is included'
+	    'list:List contents of a package'
+	    'show:Alias for list'
+	    'purge:remove all Contents-<ARCH>.gz files in cache directory'
+	)
+	_describe -t commands 'android command' cmds && ret=0
+      ;;
+      args)
+	case $line[1] in
+	    search)
+	    return
+	    ;;
+	    list|show)
+	       _deb_packages avail
+	       return
+	    ;;
+	    update|purge)
+		# do nothing
+		return
+	    ;;
+	    *)
+		_message "command $line[1] not available"
+		return
+	    ;;
+	esac
+	return
+      ;;
+    esac
 
-if (( CURRENT == 1 )); then
-  _describe -t commands "android subcommand" _1st_arguments
-  return
-fi
+}
+
+_android "$@"
