@@ -7,7 +7,7 @@ export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
 # normal alias for zsh
-alias em="zile"
+alias em="jed"
 alias emc="emacsclient -t --alternate-editor="""
 
 alias la='ls -A'
