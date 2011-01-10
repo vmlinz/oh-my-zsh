@@ -19,9 +19,10 @@ case $state in
     action)
 	actions=(
 	    "create:android actions"
+	    "list:android actions"
+	    "update:android actions"
 	    "move:android actions"
 	    "delete:android actions"
-	    "install:android actions"
 	)
 	_describe -t commands 'android action' actions && ret=0
 	;;
@@ -36,6 +37,37 @@ case $state in
 		    "lib-project:Creates a new Android library project"
 		)
 		_describe -t commands 'android create actions' targets && ret=0
+		;;
+	    list)
+		targets=(
+		    ":Lists existing targets or virtual devices."
+		    "avd:Lists existing virtual devices."
+		    "target:Lists existing targets."
+		)
+		_describe -t commands 'android list actions' targets && ret=0
+		;;
+	    update)
+		targets=(
+		    "avd:Updates a new Android Virtual Device."
+		    "project:Updates a new Android project."
+		    "test-project:Updates a new Android project for a test packaXSge."
+		    "lib-project:Updates a new Android library project"
+		    "adb:Updates adb to support the USB devices declared in the SDK add-ons."
+		    "sdk:Updates the SDK by suggesting new platforms to install if available."
+		)
+		_describe -t commands 'android update actions' targets && ret=0
+		;;
+	    move)
+		targets=(
+		    "avd:Moves or renames an Android Virtual Device."
+		)
+		_describe -t commands 'android move actions' targets && ret=0
+		;;
+	    delete)
+		targets=(
+		    "avd:Deletes an Android Virtual Device."
+		)
+		_describe -t commands 'android delete actions' targets && ret=0
 		;;
 	esac
 	;;
