@@ -6,8 +6,8 @@ export VISUAL="vim"
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
-# alias
-alias em="zile"
+# normal alias for zsh
+alias em="jed"
 alias emc="emacsclient -t --alternate-editor="""
 
 alias la='ls -A'
@@ -15,6 +15,12 @@ alias l='ls -CF'
 # sl->ls
 alias sl='ls'
 
+# suffix alias
+alias -s txt='em'
+alias -s tex='emc'
+alias -s org='emc'
+
+# key map
 bindkey -e
 
 # export default gpg key
