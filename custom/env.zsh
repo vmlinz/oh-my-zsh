@@ -3,7 +3,7 @@ export LC_CTYPE=zh_CN.UTF-8
 
 # editors
 export VISUAL="vim"
-export EDITOR=$VISUAL
+export EDITOR="jed"
 export ALTERNATE_EDITOR=$VISUAL
 
 # normal alias for zsh
