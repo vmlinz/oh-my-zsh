@@ -1,6 +1,6 @@
 locals.zsh
 log/.zsh_history
 projects.zsh
-custom/*.zsh
-!custom/example.zshcache/
 cache/
+custom/*
+!custom/example.zsh
