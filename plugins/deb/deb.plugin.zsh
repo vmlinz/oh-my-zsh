@@ -1,6 +1,6 @@
 # Aliases
 alias as="aptitude -F \"* %p -> %d \n(%v/%V)\" \
-		--no-gui --disable-columns search"	# search package
+		--disable-columns search"	# search package
 alias ad="sudo apt-get update"				# update packages lists
 alias au="sudo apt-get update && \
 		sudo apt-get dselect-upgrade"		# upgrade packages
