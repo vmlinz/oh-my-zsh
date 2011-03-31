@@ -1,7 +1,16 @@
 #compdef android
 #autoload
 
-local ret=1 state
+_android() {
+  local -a arguments
+  local state line cmds
+  arguments=(
+    '(-v --verbose)'{-v,--verbose}'[verbose]'
+    '(-h --help)'{-h,--help}'[display help screen]'
+    '1: :->cmds'
+    '*: :->args'
+  )
+    _arguments -S $arguments
 
 declare -ga global_args
 global_args=(
@@ -70,7 +79,10 @@ case $state in
 		_describe -t commands 'android delete actions' targets && ret=0
 		;;
 	esac
-	;;
-esac
+	return
+      ;;
+    esac
 
-return ret
+}
+
+_android "$@"

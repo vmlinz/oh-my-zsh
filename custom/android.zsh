@@ -23,5 +23,17 @@ else
     ANDROID_NDK_DIR=
     echo "Android ndk not found!"
 fi
-#export sdk and ndk to path
+
+# AOSP host binaries
+ANDROID_AOSP_ROOT=$HOME/Projects/android/aosp
+ANDROID_AOSP_HOST=out/host/linux-x86/bin
+if [[ -d $ANDROID_AOSP_ROOT/$ANDROID_AOSP_HOST ]]; then
+    ANDROID_AOSP_HOST_BIN=$ANDROID_AOSP_ROOT/$ANDROID_AOSP_HOST
+else
+    ANDROID_AOSP_HOST_BIN=
+    echo "Android host bin not found, build it first!"
+fi
+
+#export android tools, make official sdk and ndk tools come first in path
+export PATH=$ANDROID_AOSP_HOST_BIN:$PATH
 export PATH=$ANDROID_NDK_DIR:$ANDROID_SDK_TOOLS:$ANDROID_SDK_PLAT_TOOLS:$PATH
