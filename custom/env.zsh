@@ -36,3 +36,6 @@ export GOOS=linux
 # add git-achievements for fun
 export PATH="$PATH:$HOME/Projects/git-achievements"
 # alias git="git-achievements"
+
+# add python startup env
+export PYTHONSTARTUP=$HOME/.pythonstartup.py
