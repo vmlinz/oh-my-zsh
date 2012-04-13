@@ -1,5 +1,5 @@
 # Android sdk tools & platform tools
-ANDROID_SDK_ROOT=$HOME/Projects/android/sdk/android-sdk-linux_86
+ANDROID_SDK_ROOT=$HOME/Projects/android/sdk/android-sdk-linux
 if [[ -d $ANDROID_SDK_ROOT/tools ]]; then
     ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/tools
 else
