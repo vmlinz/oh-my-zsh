@@ -32,6 +32,7 @@ stty stop ^X
 export GOROOT=$HOME/Projects/lang/go/go-lang
 export GOARCH=amd64
 export GOOS=linux
+export PATH="$GOROOT/bin:$PATH"
 
 # add git-achievements for fun
 export PATH="$PATH:$HOME/Projects/git-achievements"
