@@ -29,7 +29,7 @@ export GPGKEY=7527C999
 stty stop ^X
 
 # play with the go-lang
-export GOROOT=$HOME/Projects/go/go-lang
+export GOROOT=$HOME/Projects/lang/go/go-lang
 export GOARCH=amd64
 export GOOS=linux
 
@@ -39,3 +39,7 @@ export PATH="$PATH:$HOME/Projects/git-achievements"
 
 # add python startup env
 export PYTHONSTARTUP=$HOME/.pythonstartup.py
+
+# export zsh
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
