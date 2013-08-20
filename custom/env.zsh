@@ -44,3 +44,6 @@ export PYTHONSTARTUP=$HOME/.pythonstartup.py
 # export zsh
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+# export gradle commandline
+export PATH="$PATH:$HOME/Apps/gradle-1.7/bin"

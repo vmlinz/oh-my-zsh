@@ -16,11 +16,11 @@ fi
 
 # Android ndk
 ANDROID_NDK_ROOT=$HOME/Projects/android/ndk
-ANDROID_NDK_VERSION=android-ndk-r5
+ANDROID_NDK_VERSION=android-ndk-r8e
 if [[ -d $ANDROID_NDK_ROOT/$ANDROID_NDK_VERSION ]]; then
-    ANDROID_NDK_DIR=$ANDROID_NDK_ROOT/$ANDROID_NDK_VERSION
+    ANDROID_NDK_HOME=$ANDROID_NDK_ROOT/$ANDROID_NDK_VERSION
 else
-    ANDROID_NDK_DIR=
+    ANDROID_NDK_HOME=
     echo "Android ndk not found!"
 fi
 
@@ -34,6 +34,13 @@ else
     echo "Android host bin not found, build it first!"
 fi
 
-#export android tools, make official sdk and ndk tools come first in path
+# export android tools, make official sdk and ndk tools come first in path
 export PATH=$ANDROID_AOSP_HOST_BIN:$PATH
 export PATH=$ANDROID_NDK_DIR:$ANDROID_SDK_TOOLS:$ANDROID_SDK_PLAT_TOOLS:$PATH
+
+# export android sdk and ndk home for maven
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+export ANDROID_NDK_HOME=$ANDROID_NDK_HOME
+
+# export android studio
+export PATH="$PATH:$HOME/Apps/android-studio/bin"
