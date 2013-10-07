@@ -36,7 +36,7 @@ fi
 
 # export android tools, make official sdk and ndk tools come first in path
 export PATH=$ANDROID_AOSP_HOST_BIN:$PATH
-export PATH=$ANDROID_NDK_DIR:$ANDROID_SDK_TOOLS:$ANDROID_SDK_PLAT_TOOLS:$PATH
+export PATH=$ANDROID_NDK_HOME:$ANDROID_SDK_TOOLS:$ANDROID_SDK_PLAT_TOOLS:$PATH
 
 # export android sdk and ndk home for maven
 export ANDROID_HOME=$ANDROID_SDK_ROOT
