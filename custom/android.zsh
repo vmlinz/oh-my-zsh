@@ -34,6 +34,22 @@ else
     echo "Android host bin not found, build it first!"
 fi
 
+# Intellj Idea
+IDEA_ROOT=$HOME/Apps/idea-IC
+if [[ -d $IDEA_ROOT/bin ]]; then
+    IDEA_BIN=$IDEA_ROOT/bin
+else
+    IDEA_BIN=
+fi
+
+# Android Studio
+STUDIO_ROOT=$HOME/Apps/android-studio
+if [[ -d $STUDIO_ROOT/bin ]]; then
+    STUDIO_BIN=$STUDIO_ROOT/bin
+else
+    STUDIO_BIN=
+fi
+
 # export android tools, make official sdk and ndk tools come first in path
 export PATH=$ANDROID_AOSP_HOST_BIN:$PATH
 export PATH=$ANDROID_NDK_HOME:$ANDROID_SDK_TOOLS:$ANDROID_SDK_PLAT_TOOLS:$PATH
@@ -43,4 +59,5 @@ export ANDROID_HOME=$ANDROID_SDK_ROOT
 export ANDROID_NDK_HOME=$ANDROID_NDK_HOME
 
 # export android studio
-export PATH="$PATH:$HOME/Apps/android-studio/bin"
+export PATH=$PATH:$IDEA_BIN
+export PATH=$PATH:$STUDIO_BIN
