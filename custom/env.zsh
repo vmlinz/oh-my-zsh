@@ -32,7 +32,7 @@ stty stop ^X
 export GOROOT=$HOME/Projects/lang/go/go-lang
 export GOARCH=amd64
 export GOOS=linux
-export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOROOT/bin"
 
 # add git-achievements for fun
 export PATH="$PATH:$HOME/Projects/git-achievements"
@@ -44,4 +44,7 @@ export PYTHONSTARTUP=$HOME/.pythonstartup.py
 # export zsh
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+# add ~/bin
+export PATH="$PATH:$HOME/bin"
 
