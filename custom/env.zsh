@@ -23,27 +23,10 @@ alias -s org='emc'
 # key map
 bindkey -e
 
-# export default gpg key
-export GPGKEY=7527C999
-
 stty stop ^X
-
-# play with the go-lang
-export GOROOT=$HOME/Projects/lang/go/go-lang
-export GOARCH=amd64
-export GOOS=linux
-export PATH="$PATH:$GOROOT/bin"
-
-# add git-achievements for fun
-export PATH="$PATH:$HOME/Projects/git-achievements"
-# alias git="git-achievements"
 
 # add python startup env
 export PYTHONSTARTUP=$HOME/.pythonstartup.py
-
-# export zsh
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # add ~/bin
 export PATH="$PATH:$HOME/bin"
