@@ -12,7 +12,6 @@ alias emc="emacsclient -t --alternate-editor="""
 
 alias la='ls -A'
 alias l='ls -CF'
-# sl->ls
 alias sl='ls'
 
 # suffix alias
@@ -30,4 +29,10 @@ export PYTHONSTARTUP=$HOME/.pythonstartup.py
 
 # add ~/bin
 export PATH="$PATH:$HOME/bin"
+
+# Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# gvm
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
